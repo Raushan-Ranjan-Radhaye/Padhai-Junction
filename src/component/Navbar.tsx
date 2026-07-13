@@ -5,7 +5,7 @@ import type { IUser } from "../model/user.model";
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
-import logo from "./../assets/logo.jpg";
+import logo from "./../assets/favicon.jpg";
 import {
   AiOutlineAppstore,
   AiOutlineClose,
@@ -71,7 +71,7 @@ export function Navbar({ user }: { user: IUser }) {
             className="rounded-full"
           />
           <span className="text-xl font-semibold hidden sm:inline">
-            MultiCart
+            Padhai Junction
           </span>
         </div>
 
@@ -79,7 +79,7 @@ export function Navbar({ user }: { user: IUser }) {
           <div className="hidden md:flex gap-8">
             <NavItem label="Home" path="/" router={router} />
             <NavItem label="Categories" path="/category" router={router} />
-            <NavItem label="Shop" path="/shop" router={router} />
+            {/* <NavItem label="Shop" path="/shop" router={router} /> */}
             <NavItem label="Orders" path="/orders" router={router} />
           </div>
         )}
@@ -272,14 +272,14 @@ export function Navbar({ user }: { user: IUser }) {
                         transition={{ duration: 0.5 }}
                         className="absolute right-0 mt-3 w-48 backdrop-blur-lg rounded-xl shadow-lg border bg-[#6a69693c]"
                       >
-                        {/* <NavItem label="Home" path="/" router={router} />
+                        <NavItem label="Home" path="/" router={router} />
                     <NavItem
                       label="Categories"
                       path="/category"
                       router={router}
                     />
                     <NavItem label="Shop" path="/shop" router={router} />
-                    <NavItem label="Orders" path="/order" router={router} /> */}
+                    <NavItem label="Orders" path="/order" router={router} />
 
                         <hr className="my-2 border-gray-600" />
                         <DropDownBtn
