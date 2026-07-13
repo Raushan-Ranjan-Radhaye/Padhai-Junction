@@ -93,7 +93,7 @@ function ProductCardPage() {
               },
             }}
           >
-            Explore Verified & Trending Products
+            Explore Verified & Experience Teachers
           </motion.h1>
         </motion.div>
 
