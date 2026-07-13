@@ -31,11 +31,11 @@ function AdminDashBoard() {
 
   const menu = [
     { id: "dashboard", label: "Dashboard", icon: <MdDashboard size={22} /> },
-    { id: "vendors", label: "Vendor Details", icon: <FaStore size={22} /> },
-    { id: "orders", label: "User Orders", icon: <FaShoppingBag size={22} /> },
+    { id: "vendors", label: "Teacher Details", icon: <FaStore size={22} /> },
+    { id: "orders", label: "Student Orders", icon: <FaShoppingBag size={22} /> },
     {
       id: "vendor-approval",
-      label: "Vendor Approval",
+      label: "Teacher Approval",
       icon: <FaCheckCircle size={22} />,
     },
     {

@@ -334,7 +334,7 @@ function VendorApprovel() {
             >
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl sm:text-2xl font-bold text-white">
-                  Vendor Details
+                  Teachers Details
                 </h3>
                 <button
                   onClick={() => setSelectedVendor(null)}

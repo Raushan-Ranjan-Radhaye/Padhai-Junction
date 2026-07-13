@@ -12,7 +12,10 @@ import { MessageSquare, Calendar } from "lucide-react";
 
 import { FaChevronLeft, FaChevronRight, FaStore } from "react-icons/fa";
 import UseGetAllProducts from "../../../hooks/UseGetAllProductsData";
-
+import {
+  HiShoppingCart,
+  HiBolt,
+} from "react-icons/hi2"
 import {
   MessageSquareText,
   Image as ImageIcon,
@@ -348,8 +351,8 @@ function ViewProduct() {
                 items-center justify-center gap-2 shadow-[0_0_5px_rgba(150,84,247,0.8)] 
                 hover:shadow-[0_0_10px_rgba(150,84,247,1)] transition-all duration-300"
               >
-                <FaShoppingCart className="animate-pulse" />
-                Add to Cart
+                <HiBolt className="animate-pulse" />
+                Add Tutor
               </motion.button>
             </div>
           )}

@@ -31,7 +31,7 @@ function VendorDashBoard() {
     <div className="w-full min-h-screen flex items-start justify-start bg-gradient-to-br  from-gray-900 via-black to-gray-900 text-white">
       {/* Mobile Tab View */}
       <div className="lg:hidden fixed top-15 left-0 w-full bg-black px-6 py-3 flex  justify-between items-center border-b border-gray-700 z-50">
-        <h1 className="text-xl font-bold ">Vendor Panel</h1>
+        <h1 className="text-xl font-bold ">Teacher Panel</h1>
         {!openMenu && (
           <button className="" onClick={() => setOpenMenu(true)}>
             <AiOutlineMenu size={25} className='cursor-pointer' />
@@ -45,7 +45,7 @@ function VendorDashBoard() {
         transition={{ duration: 0.4 }}
         className="hidden lg:block w-72 min-h-screen bg-gray-800/40 border-r border-gray-700 p-6 backdrop-blur-xl"
       >
-        <h1 className="text-xl font-bold mb-8 ">Vendor Panel</h1>
+        <h1 className="text-xl font-bold mb-8 ">Teacher Panel</h1>
         <div className="flex flex-col gap-6">
           {menu.map((item) => (
             <button
@@ -73,7 +73,7 @@ function VendorDashBoard() {
             className="lg:hidden fixed top-0 left-0 w-72 h-full bg-gray-800/90 backdrop-blur-xl p-6 z-50 border-r border-gray-700"
           >
             <div className="flex justify-between items-center mb-6">
-              <h1 className="text-xl font-bold">Vendor Panel</h1>
+              <h1 className="text-xl font-bold">Teacher Panel</h1>
               <button onClick={() => setOpenMenu(false)}>
                 <AiOutlineClose size={26} className='cursor-pointer' />
               </button>

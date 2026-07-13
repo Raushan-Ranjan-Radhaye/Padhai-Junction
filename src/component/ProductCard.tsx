@@ -5,6 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
 import { SiSubtitleedit } from "react-icons/si";
+
+import {
+  HiShoppingCart,
+  HiBolt,
+} from "react-icons/hi2";
+
+
 import {
   FaChevronLeft,
   FaChevronRight,
@@ -69,7 +76,7 @@ function ProductCard({ product }: { product: IProduct }) {
 
       }catch(error){
         console.log(error)
-        alert("Failed to add to cart")
+        alert("Failed to add to Tutor")
       }
 
      }
@@ -238,9 +245,9 @@ function ProductCard({ product }: { product: IProduct }) {
               onClick={handleAddtoCart}
             >
               <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]" />
-              <FaShoppingCart size={14} />
+              <HiBolt size={14} />
               <span className="text-xs uppercase tracking-widest">
-                Add to Cart
+                Add Tutor
               </span>
             </motion.button>
           </div>

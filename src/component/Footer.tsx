@@ -50,7 +50,7 @@ function Footer({ user }: { user: IUser }) {
                 role === "admin" ? "bg-blue-600" : "bg-blue-800"
               }`}
             >
-              {role === "admin" ? "Admin Access" : "Vendor Access"}
+              {role === "admin" ? "Admin Access" : "Teacher Access"}
             </span>
           )}
         </div>
@@ -91,14 +91,14 @@ function Footer({ user }: { user: IUser }) {
               {role === "admin" ? (
                 <React.Fragment>
                   <li className="hover:text-blue-300">✔️ Platform Management</li>
-                  <li className="hover:text-blue-300">✔️ Vendor Control</li>
+                  <li className="hover:text-blue-300">✔️ Teacher Control</li>
                   <li className="hover:text-blue-300">✔️ Orders & Revenue</li>
                   <li className="hover:text-blue-300">✔️ System Security</li>
                 </React.Fragment>
               ) : (
                 <div className="">
-                  <li className="hover:text-blue-300">✔️ Product Upload & Edit</li>
-                  <li className="hover:text-blue-300">✔️ Order & Delivery</li>
+                  {/* <li className="hover:text-blue-300">✔️ Product Upload & Edit</li> */}
+                  <li className="hover:text-blue-300">✔️ Student</li>
                   <li className="hover:text-blue-300">✔️ Sales & Profit</li>
                   <li className="hover:text-blue-300">✔️ Wallet Settlement</li>
                 </div>
