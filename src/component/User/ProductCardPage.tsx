@@ -80,7 +80,7 @@ function ProductCardPage() {
         >
           <motion.h1
             className="text-4xl sm:text-6xl font-black mb-6 leading-tight bg-clip-text 
-            text-transparent bg-gradient-to-r from-purple-400 via-pink-500 via-cyan-400 
+            text-transparent mt-5 bg-gradient-to-r from-purple-400 via-pink-500 via-cyan-400 
             to-purple-400 bg-[length:200%_auto] px-4"
             animate={{
               backgroundPosition: ["0% center", "200% center"],
@@ -103,7 +103,7 @@ function ProductCardPage() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 1 }}
         >
-          Shop only from <span className="text-purple-500">approved sellers</span>
+          {/* Shop only from <span className="text-purple-500">approved sellers</span> */}
         </motion.p>
 
         {/* SCANNING LINE */}
