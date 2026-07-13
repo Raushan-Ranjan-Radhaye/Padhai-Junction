@@ -38,11 +38,11 @@ function Footer({ user }: { user: IUser }) {
             onClick={() => router.push("/")}
             className="text-white text-3xl font-bold cursor-pointer tracking-wide hover:text-blue-400 transition hover:drop-shadow-[0_0_15px_#3b82f6]"
           >
-            MultiCart
+            Padhai Junction
           </h2>
           <p className="text-sm leading-relaxed text-gray-400">
-            Smart, secure & scalable multi-vendor eCommerce platform built for
-            performance and growth.
+            Smart, secure & scalable Padhai Junction platform built for
+            Teaching and growth.
           </p>
           {isAdminOrVendor && (
             <span
@@ -62,8 +62,8 @@ function Footer({ user }: { user: IUser }) {
             </h3>
             <ul className="space-y-2 text-sm">
               <li onClick={() => router.push("/")} className="cursor-pointer hover:text-blue-400 hover:translate-x-2 transition-all">Home</li>
-              <li onClick={() => router.push("/category")} className="cursor-pointer hover:text-blue-400 hover:translate-x-2 transition-all">Categories</li>
-              <li onClick={() => router.push("/shop")} className="cursor-pointer hover:text-blue-400 hover:translate-x-2 transition-all">Shop</li>
+              {/* <li onClick={() => router.push("/category")} className="cursor-pointer hover:text-blue-400 hover:translate-x-2 transition-all">Categories</li> */}
+              {/* <li onClick={() => router.push("/shop")} className="cursor-pointer hover:text-blue-400 hover:translate-x-2 transition-all">Shop</li> */}
               <li onClick={() => router.push("/orders")} className="cursor-pointer hover:text-blue-400 hover:translate-x-2 transition-all">Orders</li>
             </ul>
           </div>
@@ -111,14 +111,14 @@ function Footer({ user }: { user: IUser }) {
           <h2 className="text-white text-lg font-semibold mb-4 border-b border-blue-900/40 pb-1 inline-block">
             Contact Info
           </h2>
-          <p className="text-sm hover:text-blue-400 transition-colors cursor-pointer">admin@multicart.com</p>
-          <p className="text-sm hover:text-blue-400 transition-colors cursor-pointer">+91 1234567890</p>
+          <p className="text-sm hover:text-blue-400 transition-colors cursor-pointer">ayamankumar@gmail.com</p>
+          <p className="text-sm hover:text-blue-400 transition-colors cursor-pointer">+91 9576901286</p>
           <p className="text-sm text-gray-500">Patna, Bihar</p>
         </div>
       </div>
 
       <div className="relative z-10 text-center text-[10px] tracking-[0.4em] text-gray-600 mt-12 border-t border-blue-900/20 pt-8 uppercase font-bold">
-         © {new Date().getFullYear()} MultiCart 
+         © {new Date().getFullYear()} Padhai Junction 
       </div>
 
       <style jsx global>{`
