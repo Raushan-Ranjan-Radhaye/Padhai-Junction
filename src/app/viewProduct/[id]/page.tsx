@@ -51,7 +51,7 @@ import { AppDispatch } from "@/redux/store";
 import { useDispatch } from "react-redux";
 
 function ViewProduct() {
-  const { userData } = useSelector((state: RootState) => state.user);
+  const { userData: user } = useSelector((state: RootState) => state.user);
 
   const params = useParams();
   const router = useRouter();
@@ -311,8 +311,12 @@ function ViewProduct() {
                                   Expresence yr:{product.vendor?.gstNumber || "Unknown Vendor"}
 
                 </span>
+                 
               </div>
+                <span className="text-[17px] text-bold text-gray-300 truncate">
+                                 {product.vendor?.shopAddress || "shop no "}
 
+                </span>
               {/* {product?.payOnDelivery === true && (
                 <div className="flex items-center gap-2 mb-2 mt-2 text-gray-300">
                   <FaMoneyBillWave className="text-purple-400 animate-pulse shadow-[0_0_15px_rgba(168,85,247,0.5)]" />

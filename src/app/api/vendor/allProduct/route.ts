@@ -9,7 +9,7 @@ export async function GET(){
         console.log("Connected to database, fetching products...");
         
         // Fetch all products from the database
-        const products = await Product.find().populate("vendor", "name email shopName gstNumber").populate({
+        const products = await Product.find().populate("vendor", "name email shopName gstNumber shopAddress").populate({
           path:"reviews.user", select:"name email image"
         }).sort({ createdAt: -1 });
         
