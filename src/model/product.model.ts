@@ -3,7 +3,7 @@ import { IUser } from "./user.model";
 
 export interface IProduct {
   _id?: mongoose.Types.ObjectId;
-
+  
   title: string;
   description: string;
   price: number;
@@ -47,17 +47,17 @@ export interface IProduct {
 }
 
 const productSchema = new mongoose.Schema<IProduct>({
-    title: { type: String, required: true },
+    title: { type: String},
     description: { type: String, required: true },
     price: { type: Number, required: true },
-    stock: { type: Number, required: true },
+    stock: { type: Number },
     isStockAvailable: { type: Boolean, default: true },
     vendor: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
-    image1: { type: String, required: true },
-    image2: { type: String, required: true },
-    image3: { type: String , required: true },
-    image4: { type: String , required: true },
-    category: { type: String, required: true },
+    image1: { type: String },
+    image2: { type: String  },
+    image3: { type: String },
+    image4: { type: String },
+    category: { type: String },
     isWearable: { type: Boolean,default: false },
     sizes: [{ type: String ,default: [] }],
     veificationStatus: { type: String, enum: ["pending", "approved", "rejected"], default: "pending" },

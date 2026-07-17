@@ -10,7 +10,7 @@ import { ClipLoader } from "react-spinners";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageSquare, Calendar } from "lucide-react";
 
-import { FaChevronLeft, FaChevronRight, FaStore } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaStore,FaBriefcase } from "react-icons/fa";
 import UseGetAllProducts from "../../../hooks/UseGetAllProductsData";
 import {
   HiShoppingCart,
@@ -51,6 +51,8 @@ import { AppDispatch } from "@/redux/store";
 import { useDispatch } from "react-redux";
 
 function ViewProduct() {
+  const { userData } = useSelector((state: RootState) => state.user);
+
   const params = useParams();
   const router = useRouter();
   const dispatch = useDispatch<AppDispatch>();
@@ -135,9 +137,9 @@ function ViewProduct() {
 
   const images: string[] = [
     product?.image1,
-    product?.image2,
-    product?.image3,
-    product?.image4,
+    // product?.image2,
+    // product?.image3,
+    // product?.image4,
   ].filter((img): img is string => Boolean(img));
 
 
@@ -220,7 +222,7 @@ function ViewProduct() {
             </motion.div>
 
             {/* Image thumbnails - Size: 40x20 (Preserved) */}
-            {images.length > 0 && (
+            {/* {images.length > 0 && (
               <div className="flex flex-row lg:flex-col gap-3 justify-center">
                 {images.map((img, i) => (
                   <motion.div
@@ -241,13 +243,13 @@ function ViewProduct() {
                       priority
                     />
                     {/* Active selection glow overlay */}
-                    {activeImage === i && (
+                    {/* {activeImage === i && (
                       <div className="absolute inset-0 bg-purple-500/10 pointer-events-none" />
                     )}
                   </motion.div>
                 ))}
               </div>
-            )}
+            )} */} 
           </div>
 
           {/* Right side */}
@@ -255,12 +257,13 @@ function ViewProduct() {
             <div className="lg:ml-2 lg:mt-2 ">
               <h1 className="text-3xl  text-white font-extrabold mb-3 flex items-center gap-3 hover:text-purple-600">
                 <SiSubtitleedit className="text-purple-600 animate-bounce shadow-[0_0_15px_rgba(59,130,246,0.8)]" />
-                {product?.title}
+                {product?.title || "Unknown title"}
+
               </h1>
-              <p className="text-gray-400 mb-2 flex items-center gap-2 font-extrabold">
+              {/* <p className="text-gray-400 mb-2 flex items-center gap-2 font-extrabold">
                 <FaTag className="text-purple-400 animate-pulse   shadow-[0_0_15px_rgba(34,197,94,0.8)]" />
                 {product?.category}
-              </p>
+              </p> */}
 
               <p className="text-green-500 text-2xl font-extrabold flex items-center gap-2 mt-2 mb-2">
                 <FaCreditCard className="text-green-400 animate-pulse shadow-[0_0_15px_rgba(251,191,36,0.8)]" />
@@ -268,7 +271,7 @@ function ViewProduct() {
                 {product?.price}
               </p>
 
-              <p className="mb-3 text-gray-50 flex items-center gap-2 font-extrabold">
+              {/* <p className="mb-3 text-gray-50 flex items-center gap-2 font-extrabold">
                 <FaBox className="text-orange-400 animate-pulse shadow-[0_0_15px_rgba(251,146,60,0.8)]" />
                 Stock:{" "}
                 <span
@@ -282,39 +285,43 @@ function ViewProduct() {
                     ? "Available"
                     : "Not Available"}
                 </span>
-              </p>
+              </p> */}
 
-              {typeof product?.replacementDays === "number" &&
+              {/* {typeof product?.replacementDays === "number" &&
                 product.replacementDays > 0 && (
                   <div className="flex items-center gap-2 mb-0 mt-2 text-gray-300 font-extrabold">
                     <FaExchangeAlt className="text-red-400 animate-bounce shadow-[0_0_15px_rgba(236,72,153,0.8)]" />
                     <span>Replacement Days: {product.replacementDays}</span>
                   </div>
-                )}
+                )} */}
 
-              {product?.freeDelivery === true && (
+              {/* {product?.freeDelivery === true && (
                 <div className="flex items-center gap-2 mb-2 mt-2 text-gray-300 font-extrabold">
                   <FaTruck className="text-teal-400 animate-pulse shadow-[0_0_15px_rgba(20,184,166,0.8)]" />
                   <span>Free Delivery</span>
                 </div>
-              )}
+              )} */}
 
               <div className="flex items-center  gap-2 text-sm text-gray-400 border-t border-white/5 pt-2">
-                <FaStore
+                <FaBriefcase
                   size={18}
                   className="text-blue-600 animate-pulse shadow-[0_0_15px_rgba(168,85,247,0.5)]"
                 />
                 <span className="text-[17px] text-bold text-gray-300 truncate">
-                  {product.vendor?.shopName || "Unknown"}
+                                  Expresence yr:{product.vendor?.gstNumber || "Unknown Vendor"}
+
                 </span>
               </div>
 
-              {product?.payOnDelivery === true && (
+              {/* {product?.payOnDelivery === true && (
                 <div className="flex items-center gap-2 mb-2 mt-2 text-gray-300">
                   <FaMoneyBillWave className="text-purple-400 animate-pulse shadow-[0_0_15px_rgba(168,85,247,0.5)]" />
                   <span>Cash on Delivery Available</span>
                 </div>
-              )}
+              )} */}
+
+
+              {/* <div className="">
               {product && product.warrenty !== undefined && (
                 <div className="flex items-center gap-2 mb-2 mt-2 text-gray-300 font-extrabold">
                   <FaShieldAlt className="text-red-600 animate-pulse shadow-[0_0_15px_rgba(168,85,247,0.5)]" />
@@ -326,7 +333,8 @@ function ViewProduct() {
                   </span>
                 </div>
               )}
-
+              </div> */}
+              
               <div className="flex items-center gap-2 mt-3 mb-4 font-extrabold">
                 <div className="flex text-red-400 animate-bounce shadow-[0_0_15px_rgba(248,113,113,0.8)]">
                   {[1, 2, 3, 4, 5].map((i) =>
@@ -357,68 +365,70 @@ function ViewProduct() {
             </div>
           )}
         </div>
-
+       
+       
+        {/*
         {product?.isWearable === true && (
-          <>
-            {/* 1. Custom Animation Styles (Place this inside your component) */}
-            <style jsx>{`
-              @keyframes purpleGlow {
-                0%,
-                100% {
-                  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
-                  border-color: rgba(168, 85, 247, 0.3);
-                }
-                50% {
-                  box-shadow: 0 0 30px rgba(168, 85, 247, 0.8);
-                  border-color: rgba(192, 38, 211, 0.6);
-                }
-              }
-              @keyframes textShimmer {
-                0% {
-                  background-position: 0% 50%;
-                }
-                100% {
-                  background-position: 200% 50%;
-                }
-              }
-              .animate-purple-ring {
-                animation: purpleGlow 3s ease-in-out infinite;
-              }
-              .animate-shimmer-text {
-                background: linear-gradient(90deg, #a855f7, #f0abfc, #a855f7);
-                background-size: 200% auto;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                animation: textShimmer 4s linear infinite;
-              }
-            `}</style>
-            {/* 2. The Animated Container */}
-            <div className="mt-10 bg-[#0f0715] border border-purple-500/30 mb-6 rounded-2xl p-6 animate-purple-ring">
-              {product.isWearable && (
-                <div className="mb-5">
-                  {/* Animated Header */}
-                  <p className="font-black text-[20px] mb-6 uppercase tracking-[0.2em] text-sm animate-shimmer-text">
-                    Available Sizes
-                  </p>
+  <>
+    <style jsx>{`
+      @keyframes purpleGlow {
+        0%,
+        100% {
+          box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+          border-color: rgba(168, 85, 247, 0.3);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(168, 85, 247, 0.8);
+          border-color: rgba(192, 38, 211, 0.6);
+        }
+      }
 
-                  <div className="flex flex-wrap gap-4">
-                    {product.sizes?.map((s) => (
-                      <div key={s} className="relative group">
-                        {/* Background Shadow Glow */}
-                        <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-fuchsia-600 rounded-lg blur opacity-20 group-hover:opacity-100 transition duration-500"></div>
+      @keyframes textShimmer {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 200% 50%;
+        }
+      }
 
-                        {/* The Size Box */}
-                        <button className="relative px-5 py-2.5 bg-[#1a0b2e] border border-purple-500/40 rounded-lg text-purple-100 font-bold hover:scale-110 hover:border-fuchsia-400 transition-all duration-300 shadow-[0_0_10px_rgba(168,85,247,0.2)]">
-                          {s}
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          </>
-        )}
+      .animate-purple-ring {
+        animation: purpleGlow 3s ease-in-out infinite;
+      }
+
+      .animate-shimmer-text {
+        background: linear-gradient(90deg, #a855f7, #f0abfc, #a855f7);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textShimmer 4s linear infinite;
+      }
+    `}</style>
+
+    <div className="mt-10 bg-[#0f0715] border border-purple-500/30 mb-6 rounded-2xl p-6 animate-purple-ring">
+      {product.isWearable && (
+        <div className="mb-5">
+          <p className="font-black text-[20px] mb-6 uppercase tracking-[0.2em] text-sm animate-shimmer-text">
+            Available Sizes
+          </p>
+
+          <div className="flex flex-wrap gap-4">
+            {product.sizes?.map((s) => (
+              <div key={s} className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-fuchsia-600 rounded-lg blur opacity-20 group-hover:opacity-100 transition duration-500"></div>
+
+                <button className="relative px-5 py-2.5 bg-[#1a0b2e] border border-purple-500/40 rounded-lg text-purple-100 font-bold hover:scale-110 hover:border-fuchsia-400 transition-all duration-300 shadow-[0_0_10px_rgba(168,85,247,0.2)]">
+                  {s}
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </>
+)}
+*/}
 
         <div className="space-y-3 mb-2 mt-5">
           <div className="flex items-center gap-2 mb-4 mt-2 text-2xl text-cyan-600 font-extrabold">
@@ -499,42 +509,42 @@ function ViewProduct() {
             )}
         </div>
 
-        {Array.isArray(relatedProducts) && relatedProducts.length > 0 && (
-          <div className="mt-7 mb-1">
-            <div className="relative mb-8 group">
-              {/* 1. Animated Heading with Shimmer Effect */}
-              <h3 className="text-2xl font-black uppercase tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-400 to-white bg-[length:200%_auto] animate-shimmer-text">
-                Related Products
-              </h3>
+            {/*
+{Array.isArray(relatedProducts) && relatedProducts.length > 0 && (
+  <div className="mt-7 mb-1">
+    <div className="relative mb-8 group">
+      <h3 className="text-2xl font-black uppercase tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-400 to-white bg-[length:200%_auto] animate-shimmer-text">
+        Related Products
+      </h3>
 
-              {/* 2. The Animated Underline (Energy Beam) */}
-              <div className="absolute -bottom-2 left-0 h-[2px] w-24 bg-gradient-to-r from-purple-600 to-fuchsia-500 rounded-full transition-all duration-500 group-hover:w-48 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.8)]"></div>
+      <div className="absolute -bottom-2 left-0 h-[2px] w-24 bg-gradient-to-r from-purple-600 to-fuchsia-500 rounded-full transition-all duration-500 group-hover:w-48 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.8)]"></div>
 
-              {/* 3. Subtle Outer Glow behind the text */}
-              <div className="absolute top-0 left-0 -z-10 blur-2xl opacity-20 bg-purple-500 w-full h-full group-hover:opacity-40 transition-opacity duration-700"></div>
+      <div className="absolute top-0 left-0 -z-10 blur-2xl opacity-20 bg-purple-500 w-full h-full group-hover:opacity-40 transition-opacity duration-700"></div>
 
-              {/* CSS logic (ensure this is in your style jsx block or global css) */}
-              <style jsx>{`
-                @keyframes textShimmer {
-                  0% {
-                    background-position: 200% center;
-                  }
-                  100% {
-                    background-position: -200% center;
-                  }
-                }
-                .animate-shimmer-text {
-                  animation: textShimmer 5s linear infinite;
-                }
-              `}</style>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-5">
-              {relatedProducts.slice(0, 8).map((rp) => (
-                <ProductCard key={rp._id?.toString()} product={rp} />
-              ))}
-            </div>
-          </div>
-        )}
+      <style jsx>{`
+        @keyframes textShimmer {
+          0% {
+            background-position: 200% center;
+          }
+          100% {
+            background-position: -200% center;
+          }
+        }
+
+        .animate-shimmer-text {
+          animation: textShimmer 5s linear infinite;
+        }
+      `}</style>
+    </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-5">
+      {relatedProducts.slice(0, 8).map((rp) => (
+        <ProductCard key={rp._id?.toString()} product={rp} />
+      ))}
+    </div>
+  </div>
+)}
+*/}
 
         {/* review sections */}
 

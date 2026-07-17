@@ -1,10 +1,13 @@
 "use client";
-import { FaRegStar, FaRocket, FaUserCircle } from "react-icons/fa";
+
+import { FaRegStar, FaRocket, FaUserCircle , FaBriefcase} from "react-icons/fa";
 import { IProduct } from "../model/product.model";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
 import { SiSubtitleedit } from "react-icons/si";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 
 import {
   HiShoppingCart,
@@ -28,12 +31,13 @@ import axios from "axios";
 
 function ProductCard({ product }: { product: IProduct }) {
   const [current, setCurrent] = useState(0);
+  // const { userData } = useSelector((state: RootState) => state.user);
 
   const images = [
     product.image1,
-    product.image2,
-    product.image3,
-    product.image4,
+    // product.image2,
+    // product.image3,
+    // product.image4,
   ].filter((img): img is string => Boolean(img) && typeof img === "string");
 
   const next = () => {
@@ -195,7 +199,7 @@ function ProductCard({ product }: { product: IProduct }) {
                   className="inline mr-2 text-purple-400"
                   size={18}
                 />
-                {product.title || "Unknown title"}
+                {product?.title || "Unknown title"}
               </h3>
 
               <div className="flex items-center gap-1">
@@ -206,10 +210,11 @@ function ProductCard({ product }: { product: IProduct }) {
               </div>
             </div>
 
-            <div className="flex items-center gap-2 text-sm text-gray-400">
+            {/* <div className="flex items-center gap-2 text-sm text-gray-400">
               <FaTag className="text-purple-500" />
               <span className="font-medium">{product.category}</span>
-            </div>
+            </div> */}
+
 
             <div className="flex items-center gap-2">
               <FaCreditCard className="text-green-500" />
@@ -232,9 +237,9 @@ function ProductCard({ product }: { product: IProduct }) {
             </div>
 
             <div className="flex items-center gap-2 text-sm text-gray-400 border-t border-white/5 pt-2">
-              <FaStore className="text-blue-500" />
+              <FaBriefcase className="text-blue-500" />
               <span className="text-xs text-gray-300 truncate">
-                {product.vendor?.shopName || "Unknown Vendor"}
+                Expresence yr:{product.vendor?.gstNumber || "Unknown Vendor"}
               </span>
             </div>
 
