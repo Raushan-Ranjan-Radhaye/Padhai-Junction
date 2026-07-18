@@ -124,7 +124,7 @@ function Page() {
 
                   <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/5 pt-4">
                     {/* Quantity Selector Logic */}
-                    <div className="flex items-center gap-4 bg-black/40 px-4 py-2 rounded-full border border-gray-700">
+                    {/* <div className="flex items-center gap-4 bg-black/40 px-4 py-2 rounded-full border border-gray-700">
                       <button 
                         onClick={() => handleUpdateCart(item.product._id, item.quantity - 1)} 
                         className="text-gray-400 hover:text-white transition-colors"
@@ -138,7 +138,7 @@ function Page() {
                       >
                         <FaPlus size={14} />
                       </button>
-                    </div>
+                    </div> */}
 
                     {/* Action Buttons */}
                     <div className="flex items-center gap-3">

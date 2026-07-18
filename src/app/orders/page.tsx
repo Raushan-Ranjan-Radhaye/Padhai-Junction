@@ -321,14 +321,14 @@ function Orders() {
                         >
                           <FiEye className="text-xl" />
                         </button>
-                        <button
+                        {/* <button
                           onClick={() => setTrackOrderModel(order)}
                   disabled={order.orderStatus === "delivered"}
 
                           className="p-4 bg-purple-600 rounded-2xl hover:bg-purple-700 shadow-xl shadow-purple-600/20 transition-all hover:scale-110"
                         >
                           <FiTruck className="text-xl text-white" />
-                        </button>
+                        </button> */}
                       </div>
                     </td>
                   </motion.tr>
@@ -386,13 +386,13 @@ function Orders() {
                 >
                   Details
                 </button>
-                <button
+                {/* <button
                   disabled={order.orderStatus === "delivered"}
                   onClick={() => setTrackOrderModel(order)}
                   className="flex-1 py-3 bg-purple-600 rounded-xl text-sm font-bold shadow-lg shadow-purple-600/20"
                 >
                   {order.orderStatus === "delivered" ? "Delivered" : "Track Order"}
-                </button>
+                </button> */}
               </div>
             </motion.div>
           ))
