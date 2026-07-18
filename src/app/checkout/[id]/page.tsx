@@ -275,7 +275,7 @@ export default function Checkout() {
         <div className="space-y-6">
           <div className="flex items-center gap-3">
             <FaFileInvoiceDollar className="text-purple-500 text-2xl" />
-            <h2 className="text-2xl font-bold text-white tracking-tight">Purchase Summary</h2>
+            <h2 className="text-2xl font-bold text-white tracking-tight">Tutor Appointment</h2>
           </div>
 
           <div className="bg-white/5 rounded-2xl border border-white/10 p-5 space-y-4">
