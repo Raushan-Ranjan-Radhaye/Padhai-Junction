@@ -52,9 +52,9 @@ function VendorOrders() {
   const statusOptions = [
     "pending",
     "confirmed",
-    "shipped",
-    "delivered",
-    "cancelled",
+    // "shipped",
+    // "delivered",
+    // "cancelled",
   ];
 
   const updateStatus = async (orderId: string, status: string) => {
@@ -239,7 +239,8 @@ function VendorOrders() {
             </div>
           </div>
         </div>
-        <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl p-2 sm:p-3 lg:p-4">
+
+        {/* <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl p-2 sm:p-3 lg:p-4">
           <div className="flex items-center gap-2 sm:gap-3">
             <div className="p-1.5 sm:p-2 bg-purple-500/20 rounded-lg">
               <MdLocalShipping className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-purple-400" />
@@ -251,8 +252,9 @@ function VendorOrders() {
               <p className="text-[10px] sm:text-xs text-gray-400">Shipped</p>
             </div>
           </div>
-        </div>
-        <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl p-2 sm:p-3 lg:p-4">
+        </div> */}
+
+        {/* <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl p-2 sm:p-3 lg:p-4">
           <div className="flex items-center gap-2 sm:gap-3">
             <div className="p-1.5 sm:p-2 bg-green-500/20 rounded-lg">
               <FaCheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-green-400" />
@@ -264,7 +266,8 @@ function VendorOrders() {
               <p className="text-[10px] sm:text-xs text-gray-400">Delivered</p>
             </div>
           </div>
-        </div>
+        </div> */}
+        
       </div>
 
       {/* Desktop Table View - with horizontal scroll */}

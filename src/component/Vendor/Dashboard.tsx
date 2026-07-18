@@ -126,10 +126,10 @@ function Dashboard() {
   );
 
   const orderStatusData = [
-    { name: "Delivered", value: deliveredOrders.length },
+    // { name: "Delivered", value: deliveredOrders.length },
     { name: "Pending", value: pendingOrders.length },
-    { name: "Cancelled", value: cancelledOrders.length },
-    { name: "Returned", value: returnedOrders.length },
+    // { name: "Cancelled", value: cancelledOrders.length },
+    // { name: "Returned", value: returnedOrders.length },
   ];
 
   const ordersDateMap: Record<string, number> = {};
@@ -220,19 +220,19 @@ function Dashboard() {
             
             {/* Status Boxes - Fully Responsive */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-3 sm:mb-4 md:mb-5">
-              <StatusBox 
+              {/* <StatusBox 
                 label="Delivered" 
                 value={deliveredOrders.length} 
                 icon={<LuCircleCheck />} 
                 colorClass="text-green-400" 
-              />
+              /> */}
               <StatusBox 
                 label="Pending" 
                 value={pendingOrders.length} 
                 icon={<LuClock />} 
                 colorClass="text-yellow-400" 
               />
-              <StatusBox 
+              {/* <StatusBox 
                 label="Cancelled" 
                 value={cancelledOrders.length} 
                 icon={<LuCircleX />} 
@@ -243,7 +243,7 @@ function Dashboard() {
                 value={returnedOrders.length} 
                 icon={<LuRotateCcw />} 
                 colorClass="text-orange-400" 
-              />
+              /> */}
             </div>
             
             {/* Pie Chart - Fully Responsive */}
@@ -316,6 +316,7 @@ function Dashboard() {
             </ResponsiveContainer>
           </div>
         )}
+        
       </div>
     </div>
   );
