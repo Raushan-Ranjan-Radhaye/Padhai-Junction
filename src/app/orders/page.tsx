@@ -183,10 +183,10 @@ function Orders() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
             <h2 className="text-3xl md:text-5xl font-bold flex items-center gap-4">
-              <FiShoppingBag className="text-purple-500" /> My Orders
+              <FiShoppingBag className="text-purple-500" /> My Booking
             </h2>
             <p className="text-base md:text-xl text-gray-400 mt-2">
-              All orders placed by you
+              All booking placed by you
             </p>
           </div>
           <div className="text-xl md:text-2xl font-mono text-purple-400 bg-purple-500/10 px-8 py-4 rounded-2xl border border-purple-500/20 w-fit">
@@ -216,12 +216,12 @@ function Orders() {
                 </th>
                 <th className="px-10 py-9">
                   <div className="flex items-center gap-3">
-                    <FiPackage className="text-purple-500 text-xl" /> Products
+                    <FiPackage className="text-purple-500 text-xl" /> Teacher
                   </div>
                 </th>
                 <th className="px-10 py-9">
                   <div className="flex items-center gap-3">
-                    <FiUser className="text-purple-500 text-xl" /> Vendor
+                    <FiUser className="text-purple-500 text-xl" /> Qulification
                   </div>
                 </th>
                 <th className="px-10 py-9">
@@ -440,7 +440,7 @@ function Orders() {
 
               <div className="space-y-4 mb-8">
                 <h3 className="text-lg text-gray-400 font-bold uppercase tracking-widest flex items-center gap-2">
-                  <FiPackage /> Products
+                  <FiPackage /> Buying
                 </h3>
                 {selectedOrder.products?.map((p: any, i: number) => {
                   const replacementDays = p.product?.replacementDays;
@@ -493,11 +493,11 @@ function Orders() {
                   <FiCreditCard /> Invoice
                 </h3>
                 <div className="flex justify-between text-gray-400">
-                  <span>Products Total</span>
+                  <span> Total</span>
                   <span>₹{selectedOrder.productsTotal}</span>
                 </div>
                 <div className="flex justify-between text-gray-400">
-                  <span>Delivery Charges</span>
+                  <span>Platform Charges</span>
                   <span>₹{selectedOrder.deliveryCharge}</span>
                 </div>
                 <div className="flex justify-between text-gray-400">
@@ -520,9 +520,9 @@ function Orders() {
                       <li>
                         Online Payment (Razorpay) orders cannot be cancelled.
                       </li>
-                      <li>You can return the product after delivery.</li>
+                      <li>You can never be the return your payment .</li>
                       <li>
-                        Product amount is refundable; delivery/service charges
+                        Product amount is refundable; service charges
                         are not.
                       </li>
                     </ul>
@@ -558,7 +558,7 @@ function Orders() {
           </motion.div>
         )}
 
-        {trackOrderModal && (
+        {/* {trackOrderModal && (
           <div className="fixed inset-0 z-[101] flex items-center justify-center p-4 bg-black/95 backdrop-blur-2xl">
             <motion.div
               className="relative w-full max-w-lg bg-[#05070a] border border-purple-500/30 p-8 md:p-10 rounded-[3rem]"
@@ -611,7 +611,7 @@ function Orders() {
             </motion.div>
           </div>
         )}
-        
+         */}
       </AnimatePresence>
     </div>
   );

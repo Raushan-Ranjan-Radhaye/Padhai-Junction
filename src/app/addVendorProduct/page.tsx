@@ -9,16 +9,16 @@ import { ClipLoader } from "react-spinners";
 
 function AddVendorProduct() {
   const categories = [
-    "Fashion & Lifestyle",
-    "Electronics & Gadgets",
-    "Home & Living",
-    "Health & Beauty",
-    "Sports & Outdoors",
-    "Toys ,Kids & Baby",
-    "Food & Groceries",
-    "Automotive & Accessories",
-    "Gifts & Handicrafts",
-    "Books & Stationery",
+    "All Boards",
+    "CBSE Board",
+    "BIHAR Board",
+    "ICSE Board",
+    "Nursery to 10 Class",
+    "All Subjects",
+    "Social Science",
+    "Math & Science",
+    "Computer Science",
+    "Sanskrit,Hindi & English",
     "Others",
   ];
 
@@ -68,13 +68,8 @@ function AddVendorProduct() {
   };
 
   const handlerSubmit = async () => {
-      if (!title || !description || !price || !stock || !category || !image1 || !image2 || !image3 || !image4) {
+      if (!title || !description || !price || !category) {
         alert("Please fill in all required fields");
-        return;
-      }
-
-      if (isWearable && sizes.length === 0) {
-        alert("Please select at least one size for wearable products");
         return;
       }
 
@@ -95,12 +90,10 @@ function AddVendorProduct() {
         formData.append("payOnDelivery", String(payOnDelivery));
         detailPoints.forEach((point) => formData.append("detailsPoints", point));
         
-        if (image1 && image2 && image3 && image4) {
-          formData.append("image1", image1);
-          formData.append("image2", image2);
-          formData.append("image3", image3);
-          formData.append("image4", image4);
-        }
+        if (image1) formData.append("image1", image1);
+        if (image2) formData.append("image2", image2);
+        if (image3) formData.append("image3", image3);
+        if (image4) formData.append("image4", image4);
 
         const result = await axios.post("/api/vendor/addProduct", formData);
         console.log("Product added successfully:", result.data);
@@ -135,21 +128,21 @@ function AddVendorProduct() {
         className="max-w-4xl mx-auto bg-white/10 backdrop-blur-lg p-6 sm:p-8 rounded-2xl border border-white/20 shadow-xl"
       >
         <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-center">
-          Add New Product
+          Add New Card
         </h1>
 
         {/* Basic Information */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
           <div>
             <label className="block text-sm font-medium mb-2">
-              Product Title
+              Your Name 
             </label>
             <input
               onChange={(e) => setTitle(e.target.value)}
               value={title}
               type="text"
               className="w-full p-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Product Title"
+              placeholder="Your Name "
             />
           </div>
           <div>
@@ -162,18 +155,21 @@ function AddVendorProduct() {
               placeholder="Price"
             />
           </div>
+
           <div>
             <label className="block text-sm font-medium mb-2">
-              Stock Quantity
+              How many children are to teach.
             </label>
             <input
               onChange={(e) => setStock(e.target.value)}
               value={stock}
               type="number"
               className="w-full p-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Stock Quantity"
+              placeholder="Give the number of children"
             />
           </div>
+
+
           <div>
             <label className="block text-sm font-medium mb-2">Category</label>
             <select
@@ -214,11 +210,11 @@ function AddVendorProduct() {
         {/* Description */}
         <div className="mb-6">
           <label className="block text-sm font-medium mb-2">
-            Product Description
+            Your Fully Description
           </label>
           <textarea
             className="w-full p-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Product Description"
+            placeholder="Your Description"
             rows={4}
             onChange={(e) => setDescription(e.target.value)}
             value={description}
@@ -226,7 +222,7 @@ function AddVendorProduct() {
         </div>
 
         {/* Product Type */}
-        <div className="flex items-center gap-3 mb-6">
+        {/* <div className="flex items-center gap-3 mb-6">
           <input
             type="checkbox"
             className="w-5 h-5"
@@ -234,7 +230,7 @@ function AddVendorProduct() {
             checked={isWearable}
           />
           <span className="text-sm">This is a wearable / clothing product</span>
-        </div>
+        </div> */}
 
         {isWearable && (
           <div className="mb-6">
@@ -260,7 +256,7 @@ function AddVendorProduct() {
 
         {/* Additional Features */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-          <div>
+          {/* <div>
             <label className="block text-sm font-medium mb-2">
               Replacement Days
             </label>
@@ -271,8 +267,8 @@ function AddVendorProduct() {
               onChange={(e) => setReplacementDays(e.target.value)}
               value={replacementDays}
             />
-          </div>
-          <div>
+          </div> */}
+          {/* <div>
             <label className="block text-sm font-medium mb-2">Warranty</label>
             <input
               type="text"
@@ -281,12 +277,12 @@ function AddVendorProduct() {
               onChange={(e) => setWarranty(e.target.value)}
               value={warranty}
             />
-          </div>
+          </div> */}
         </div>
 
         {/* Delivery Options */}
         <div className="flex items-center gap-6 mb-6">
-          <div className="flex items-center gap-3">
+          {/* <div className="flex items-center gap-3">
             <input
               type="checkbox"
               className="w-5 h-5"
@@ -294,7 +290,7 @@ function AddVendorProduct() {
               checked={freeDelivery}
             />
             <span className="text-sm">Free Delivery</span>
-          </div>
+          </div> */}
           <div className="flex items-center gap-3">
             <input
               type="checkbox"
@@ -302,13 +298,13 @@ function AddVendorProduct() {
               onChange={() => setPayOnDelivery(!payOnDelivery)}
               checked={payOnDelivery}
             />
-            <span className="text-sm">Pay On Delivery</span>
+            <span className="text-sm">Pay Online</span>
           </div>
         </div>
 
         {/* Image Upload */}
         <div className="mb-6">
-          <h3 className="font-semibold mb-3 text-lg">Upload Product Images</h3>
+          <h3 className="font-semibold mb-3 text-lg">Upload Your Image</h3>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {/* image 1 */}
             <div>
@@ -348,7 +344,7 @@ function AddVendorProduct() {
             </div>
 
             {/* image 2 */}
-            <div>
+            {/* <div>
               <input
                 type="file"
                 hidden
@@ -382,10 +378,10 @@ function AddVendorProduct() {
                   </div>
                 )}
               </label>
-            </div>
+            </div> */}
 
             {/* image 3 */}
-            <div>
+            {/* <div>
               <input
                 type="file"
                 hidden
@@ -419,10 +415,10 @@ function AddVendorProduct() {
                   </div>
                 )}
               </label>
-            </div>
+            </div> */}
 
             {/* image 4 */}
-            <div>
+            {/* <div>
               <input
                 type="file"
                 hidden
@@ -456,13 +452,13 @@ function AddVendorProduct() {
                   </div>
                 )}
               </label>
-            </div>
+            </div> */}
           </div>
         </div>
 
         {/* Product Details Points */}
         <div className="mb-6">
-          <p className="font-semibold mb-3 text-lg">Product Details Points</p>
+          <p className="font-semibold mb-3 text-lg">Your Details Points</p>
           <div className="flex gap-3 mb-4">
             <input
               type="text"

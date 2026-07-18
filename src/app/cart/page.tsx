@@ -15,7 +15,7 @@ import {
 } from "react-icons/fa"; // Imported React Icons
 import { MdOutlineLocalOffer } from "react-icons/md";
 
-function page() {
+function Page() {
   const router = useRouter();
   const [cart, setCart] = useState<any[]>([]);
 
@@ -77,12 +77,14 @@ function page() {
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-4 mb-10 border-b border-gray-800 pb-6">
           <FaShoppingCart className="text-purple-500 text-3xl" />
-          <h1 className="text-3xl font-bold tracking-tight">Your Shopping Cart</h1>
+          <h1 className="text-3xl font-bold tracking-tight">Your Purchase Cart</h1>
         </div>
 
         <div className="grid grid-cols-1 gap-6">
           <AnimatePresence>
-            {cart.map((item, index) => (
+            {cart
+              .filter(item => item.product !== null)
+              .map((item, index) => (
               <motion.div 
                 key={index} 
                 initial={{ opacity: 0, y: 20 }}
@@ -167,4 +169,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

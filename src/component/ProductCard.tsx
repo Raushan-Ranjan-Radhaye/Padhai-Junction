@@ -8,7 +8,7 @@ import Image from "next/image";
 import { SiSubtitleedit } from "react-icons/si";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
-
+import { FaBookOpen } from "react-icons/fa6";
 import {
   HiShoppingCart,
   HiBolt,
@@ -210,10 +210,10 @@ function ProductCard({ product }: { product: IProduct }) {
               </div>
             </div>
 
-            {/* <div className="flex items-center gap-2 text-sm text-gray-400">
-              <FaTag className="text-purple-500" />
-              <span className="font-medium">{product.category}</span>
-            </div> */}
+            <div className="flex items-center gap-2 text-sm text-gray-400">
+              <FaBookOpen className="text-purple-500" />
+              <span className="font-medium">Expert: {product.category}</span>
+            </div>
 
 
             <div className="flex items-center gap-2">
@@ -239,7 +239,7 @@ function ProductCard({ product }: { product: IProduct }) {
             <div className="flex items-center gap-2 text-sm text-gray-400 border-t border-white/5 pt-2">
               <FaBriefcase className="text-blue-500" />
               <span className="text-xs text-gray-300 truncate">
-                Expresence yr:{product.vendor?.gstNumber || "Unknown Vendor"}
+                Experience yr:{product.vendor?.gstNumber || "Unknown Vendor"}
               </span>
             </div>
 

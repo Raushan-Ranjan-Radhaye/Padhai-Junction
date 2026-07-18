@@ -57,7 +57,7 @@ const productSchema = new mongoose.Schema<IProduct>({
     image2: { type: String  },
     image3: { type: String },
     image4: { type: String },
-    category: { type: String },
+    category: { type: String,required: true },
     isWearable: { type: Boolean,default: false },
     sizes: [{ type: String ,default: [] }],
     veificationStatus: { type: String, enum: ["pending", "approved", "rejected"], default: "pending" },

@@ -11,16 +11,16 @@ import { RootState } from "@/redux/store";
 
 function UpdateProduct() {
   const categories = [
-    "Fashion & Lifestyle",
-    "Electronics & Gadgets",
-    "Home & Living",
-    "Health & Beauty",
-    "Sports & Outdoors",
-    "Toys ,Kids & Baby",
-    "Food & Groceries",
-    "Automotive & Accessories",
-    "Gifts & Handicrafts",
-    "Books & Stationery",
+    "All Boards",
+    "CBSE Board",
+    "BIHAR Board",
+    "ICSE Board",
+    "Nursery to 10 Class",
+    "All Subjects",
+    "Social Science",
+    "Math & Science",
+    "Computer Science",
+    "Sanskrit,Hindi & English",
     "Others",
   ];
 
@@ -83,6 +83,10 @@ function UpdateProduct() {
       setPrice(String(product.price || ""));
       setStock(String(product.stock || ""));
       setCategory(product.category || "");
+      // If the product's category is not in the predefined list, set it as custom category
+      if (product.category && !categories.includes(product.category)) {
+        setCustomCategory(product.category);
+      }
 
       setIsWearable(Boolean(product.isWearable));
       setSizes(product.sizes || []);
@@ -205,14 +209,14 @@ function UpdateProduct() {
         className="max-w-4xl mx-auto bg-white/10 backdrop-blur-lg p-6 sm:p-8 rounded-2xl border border-white/20 shadow-xl"
       >
         <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-center">
-          Update Product
+          Update Card
         </h1>
 
         {/* Basic Information */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
           <div>
             <label className="block text-sm font-medium mb-2">
-              Product Title
+              Your Name
             </label>
             <input
               onChange={(e) => setTitle(e.target.value)}
@@ -234,20 +238,21 @@ function UpdateProduct() {
           </div>
           <div>
             <label className="block text-sm font-medium mb-2">
-              Stock Quantity
+              How many children are to teach.
             </label>
             <input
               onChange={(e) => setStock(e.target.value)}
               value={stock}
               type="number"
               className="w-full p-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Stock Quantity"
+              placeholder="Give the number of children"
             />
           </div>
           <div>
             <label className="block text-sm font-medium mb-2">Category</label>
             <select
               onChange={(e) => setCategory(e.target.value)}
+              value={category}
               className="w-full p-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option className="bg-gray-800" value="">
@@ -296,7 +301,7 @@ function UpdateProduct() {
         </div>
 
         {/* Product Type */}
-        <div className="flex items-center gap-3 mb-6">
+        {/* <div className="flex items-center gap-3 mb-6">
           <input
             type="checkbox"
             className="w-5 h-5"
@@ -304,9 +309,9 @@ function UpdateProduct() {
             checked={isWearable}
           />
           <span className="text-sm">This is a wearable / clothing product</span>
-        </div>
+        </div> */}
 
-        {isWearable && (
+        {/* {isWearable && (
           <div className="mb-6">
             <p className="mb-2 text-sm font-semibold">Select Sizes</p>
             <div className="flex flex-wrap gap-3">
@@ -326,10 +331,10 @@ function UpdateProduct() {
               ))}
             </div>
           </div>
-        )}
+        )} */}
 
         {/* Additional Features */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
           <div>
             <label className="block text-sm font-medium mb-2">
               Replacement Days
@@ -352,11 +357,11 @@ function UpdateProduct() {
               value={warranty}
             />
           </div>
-        </div>
+        </div> */}
 
         {/* Delivery Options */}
         <div className="flex items-center gap-6 mb-6">
-          <div className="flex items-center gap-3">
+          {/* <div className="flex items-center gap-3">
             <input
               type="checkbox"
               className="w-5 h-5"
@@ -364,21 +369,21 @@ function UpdateProduct() {
               checked={freeDelivery}
             />
             <span className="text-sm">Free Delivery</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <input
-              type="checkbox"
-              className="w-5 h-5"
-              onChange={() => setPayOnDelivery(!payOnDelivery)}
-              checked={payOnDelivery}
-            />
-            <span className="text-sm">Pay On Delivery</span>
-          </div>
+          </div> */}
+           <div className="flex items-center gap-3">
+             <input
+               type="checkbox"
+               className="w-5 h-5"
+               onChange={() => setPayOnDelivery(!payOnDelivery)}
+               checked={payOnDelivery}
+             />
+             <span className="text-sm">Pay Online</span>
+           </div>
         </div>
 
         {/* Image Upload */}
         <div className="mb-6">
-          <h3 className="font-semibold mb-3 text-lg">Upload Product Images</h3>
+          <h3 className="font-semibold mb-3 text-lg">Upload Your Image</h3>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {/* image 1 */}
             <div>
@@ -418,7 +423,7 @@ function UpdateProduct() {
             </div>
 
             {/* image 2 */}
-            <div>
+            {/* <div>
               <input
                 type="file"
                 hidden
@@ -452,10 +457,10 @@ function UpdateProduct() {
                   </div>
                 )}
               </label>
-            </div>
+            </div> */}
 
             {/* image 3 */}
-            <div>
+            {/* <div>
               <input
                 type="file"
                 hidden
@@ -489,10 +494,10 @@ function UpdateProduct() {
                   </div>
                 )}
               </label>
-            </div>
+            </div> */}
 
             {/* image 4 */}
-            <div>
+            {/* <div>
               <input
                 type="file"
                 hidden
@@ -526,13 +531,13 @@ function UpdateProduct() {
                   </div>
                 )}
               </label>
-            </div>
+            </div> */}
           </div>
         </div>
 
         {/* Product Details Points */}
         <div className="mb-6">
-          <p className="font-semibold mb-3 text-lg">Product Details Points</p>
+          <p className="font-semibold mb-3 text-lg">Your Important Detail Points</p>
           <div className="flex gap-3 mb-4">
             <input
               type="text"

@@ -62,7 +62,7 @@ function Footer({ user }: { user: IUser }) {
             </h3>
             <ul className="space-y-2 text-sm">
               <li onClick={() => router.push("/")} className="cursor-pointer hover:text-blue-400 hover:translate-x-2 transition-all">Home</li>
-              {/* <li onClick={() => router.push("/category")} className="cursor-pointer hover:text-blue-400 hover:translate-x-2 transition-all">Categories</li> */}
+              <li onClick={() => router.push("/category")} className="cursor-pointer hover:text-blue-400 hover:translate-x-2 transition-all">Categories</li>
               {/* <li onClick={() => router.push("/shop")} className="cursor-pointer hover:text-blue-400 hover:translate-x-2 transition-all">Shop</li> */}
               <li onClick={() => router.push("/orders")} className="cursor-pointer hover:text-blue-400 hover:translate-x-2 transition-all">Orders</li>
             </ul>

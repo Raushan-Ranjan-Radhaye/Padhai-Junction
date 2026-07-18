@@ -139,7 +139,7 @@ function VendorProducts() {
   return (
     <div className="w-full p-4 sm:p-8 text-white">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl sm:text-3xl font-bold">My Products</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold">My Card</h1>
         <motion.button
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}

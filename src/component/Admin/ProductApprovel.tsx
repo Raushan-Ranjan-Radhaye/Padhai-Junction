@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AnimatePresence, motion } from "motion/react";
 import UseGetAllVendors from "@/hooks/UseGetAllVendors";
+import UseGetAllProducts from "@/hooks/UseGetAllProductsData";
 import { setAllProductsData } from "@/redux/vendorSlice";
 import { ClipLoader } from "react-spinners";
 import axios from "axios";
@@ -12,6 +13,7 @@ import axios from "axios";
 function ProductApprovel() {
   const dispatch = useDispatch<AppDispatch>();
   UseGetAllVendors();
+  UseGetAllProducts();
   const allProductsData: IProduct[] = useSelector(
     (state: RootState) => state.vendor.allProductsData,
   );

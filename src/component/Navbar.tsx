@@ -78,7 +78,7 @@ export function Navbar({ user }: { user: IUser }) {
         {user.role === "user" && (
           <div className="hidden md:flex gap-8">
             <NavItem label="Home" path="/" router={router} />
-            {/* <NavItem label="Categories" path="/category" router={router} /> */}
+            <NavItem label="Categories" path="/category" router={router} />
             {/* <NavItem label="Shop" path="/shop" router={router} /> */}
             <NavItem label="Orders" path="/orders" router={router} />
           </div>
@@ -342,13 +342,13 @@ export function Navbar({ user }: { user: IUser }) {
                         Icon={AiOutlineAppstore}
                         setSidebarOpen={setSidebarOpen}
                       />
-                      <SidebarBtn
+                      {/* <SidebarBtn
                         label="Shop"
                         path="/shop"
                         router={router}
                         Icon={AiOutlineShop}
                         setSidebarOpen={setSidebarOpen}
-                      />
+                      /> */}
                       <SidebarBtn
                         label="Orders"
                         path="/orders"

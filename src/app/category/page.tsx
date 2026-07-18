@@ -17,16 +17,17 @@ import {
   FaSpinner
 } from "react-icons/fa";
 import { 
-  GiClothes, 
-  GiSmartphone, 
-  GiHouse, 
-  GiLipstick,
-  GiBookshelf,
-  GiCarWheel,
-  GiHealthPotion,
+  GiNotebook,
+  GiBookCover,
+  GiBookPile,
+  GiDesk,
+  GiGraduateCap,
+  GiEarthAmerica,
+  GiTestTubes,
+  GiLaptop,
+  GiFeather,
   GiPencilBrush,
-  GiWatch,
-  GiHandSaw,
+  GiSchoolBag,
 } from "react-icons/gi";
 import { IProduct } from "@/model/product.model";
 import { IUser } from "@/model/user.model";
@@ -62,16 +63,16 @@ type Category = {
 export default function CategoriesPage() {
   const categoryList: Category[] = [
     { label: "All", icon: <FaTh />, value: "all" },
-    { label: "Fashion & Lifestyle", icon: <GiClothes />, value: "Fashion & Lifestyle" },
-    { label: "Electronics & Gadgets", icon: <GiSmartphone />, value: "Electronics & Gadgets" },
-    { label: "Home & Living", icon: <GiHouse />, value: "Home & Living" },
-    { label: "Sports & Outdoors", icon: <span>⚽</span>, value: "Sports & Fitness" },
-    { label: "Books & Stationery", icon: <GiBookshelf />, value: "Books & Media" },
-    { label: "Toys, kids & Baby", icon: <span>🧸</span>, value: "Toys & Games" },
-    { label: "Automotive & Accessories", icon: <GiCarWheel />, value: "Automotive Accessories" },
-    { label: "Health & Beauty", icon: <GiHealthPotion />, value: "Health & Wellness" },
-    { label: "Food & Groceries", icon: <span>🍎</span>, value: "Food & Grocery" },
-    { label: "Gifts & Handcrafts", icon: <GiHandSaw />, value: "Gifts & Handcrafts" },
+    { label: "All Boards", icon: <GiSchoolBag />, value: "All Boards" },
+    { label: "CBSE Board", icon: <GiBookCover />, value: "CBSE Board" },
+    { label: "BIHAR Board", icon: <GiBookPile />, value: "BIHAR Board" },
+    { label: "ICSE Board", icon: <GiDesk />, value: "ICSE Board" },
+    { label: "Nursery to 10 Class", icon: <GiGraduateCap />, value: "Nursery to 10 Class" },
+    { label: "All Subjects", icon: <GiPencilBrush />, value: "All Subjects" },
+    { label: "Social Science", icon: <GiEarthAmerica />, value: "Social Science, Hindi" },
+    { label: "Math & Science", icon: <GiTestTubes />, value: "Math & Science" },
+    { label: "Computer Science", icon: <GiLaptop />, value: "Computer Science" },
+    { label: "Sanskrit,Hindi & English", icon: <GiFeather />, value: "Gifts & Handcrafts" },
   ];
 
   const { allVendorsData } = useSelector((state: RootState) => state.vendor);
@@ -171,10 +172,10 @@ export default function CategoriesPage() {
         <div className="bg-gradient-to-r from-black via-blue-950/40 to-black py-8 px-4 border-b border-blue-900/30">
           <div className="max-w-7xl mx-auto">
             <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 via-sky-300 to-blue-500 bg-clip-text text-transparent">
-              Browse Products
+              Browse Teachers
             </h1>
             <p className="text-gray-400 mt-2 text-sm md:text-base">
-              Discover amazing products from verified shops
+              Discover the best teachers  
             </p>
           </div>
         </div>
@@ -245,7 +246,7 @@ export default function CategoriesPage() {
               >
                 <h3 className="text-lg font-semibold mb-4 flex items-center gap-2 text-sky-300">
                   <FaStore className="text-blue-400" />
-                  Filter by Shop
+                  Filter by Subjects & Boards
                 </h3>
                 <div className="relative">
                   <input
@@ -332,7 +333,7 @@ export default function CategoriesPage() {
                     <>
                       <FaBoxOpen className="text-blue-400" />
                       <span>
-                        {displayProducts.length} {displayProducts.length === 1 ? "product" : "products"} found
+                        {displayProducts.length} {displayProducts.length === 1 ? "Teacher" : "Teachers"} found
                       </span>
                     </>
                   )}
@@ -383,7 +384,7 @@ export default function CategoriesPage() {
                     className="text-center py-20 bg-black/40 rounded-2xl border border-blue-950/50"
                   >
                     <FaBoxOpen className="text-6xl text-gray-800 mb-4 mx-auto" />
-                    <h3 className="text-xl font-semibold text-gray-300 mb-2">No Products Found</h3>
+                    <h3 className="text-xl font-semibold text-gray-300 mb-2">No Teachers Found</h3>
                     <p className="text-gray-500">Try adjusting your search or filters</p>
                   </motion.div>
                 ) : (

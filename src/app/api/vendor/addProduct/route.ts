@@ -54,10 +54,7 @@ export async function POST(req: NextRequest) {
       !price ||
       !stock ||
       !category ||
-      !img1 ||
-      !img2 ||
-      !img3 ||
-      !img4
+      !img1
     ) {
       return NextResponse.json({ message: "All fields are required" });
     }
@@ -69,9 +66,9 @@ export async function POST(req: NextRequest) {
     }
 
     const image1 = await uploadOnCloudinary(img1);
-    const image2 = await uploadOnCloudinary(img2);
-    const image3 = await uploadOnCloudinary(img3);
-    const image4 = await uploadOnCloudinary(img4);
+    const image2 = img2 ? await uploadOnCloudinary(img2) : undefined;
+    const image3 = img3 ? await uploadOnCloudinary(img3) : undefined;
+    const image4 = img4 ? await uploadOnCloudinary(img4) : undefined;
 
     const product = await Product.create({
       title,

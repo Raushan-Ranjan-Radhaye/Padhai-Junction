@@ -10,7 +10,7 @@ import { MdOutlinePayments } from "react-icons/md";
 import { ClipLoader } from "react-spinners";
 import { SiRazorpay } from "react-icons/si";
 import { FaMoneyBillWave } from "react-icons/fa";
-
+import { FaUserGraduate } from "react-icons/fa6";
 interface CartItem {
   product: {
     _id: string;
@@ -56,7 +56,9 @@ export default function Checkout() {
     const loadItem = async () => {
       try {
         const result = await axios.get("/api/user/cart/get");
-        const foundItem = result.data.cart.find((i: CartItem) => i.product._id === productId);
+        const foundItem = result.data.cart
+          .filter((i: CartItem) => i.product !== null)
+          .find((i: CartItem) => i.product._id === productId);
 
         if (!foundItem) {
           router.replace("/cart");
@@ -151,7 +153,7 @@ export default function Checkout() {
           key: razorpayKey,
           amount: finalTotal * 100, // Amount in paise
           currency: "INR",
-          name: "MultiCart",
+          name: "Padahi Junction",
           description: "Order Payment",
           order_id: razorpayOrderId,
           handler: async (response: { razorpay_order_id: string; razorpay_payment_id: string; razorpay_signature: string }) => {
@@ -206,8 +208,8 @@ export default function Checkout() {
         {/* Left Side: Address Form */}
         <div className="space-y-6">
           <div className="flex items-center gap-3">
-            <FaTruck className="text-purple-500 text-2xl" />
-            <h2 className="text-2xl font-bold text-white tracking-tight">Delivery Address</h2>
+            <FaUserGraduate className="text-purple-500 text-2xl" />
+            <h2 className="text-2xl font-bold text-white tracking-tight">Student Details </h2>
           </div>
 
           <div className="space-y-4">
@@ -273,7 +275,7 @@ export default function Checkout() {
         <div className="space-y-6">
           <div className="flex items-center gap-3">
             <FaFileInvoiceDollar className="text-purple-500 text-2xl" />
-            <h2 className="text-2xl font-bold text-white tracking-tight">Order Summary</h2>
+            <h2 className="text-2xl font-bold text-white tracking-tight">Purchase Summary</h2>
           </div>
 
           <div className="bg-white/5 rounded-2xl border border-white/10 p-5 space-y-4">
@@ -293,7 +295,7 @@ export default function Checkout() {
 
             <div className="pt-4 border-t border-white/5 space-y-3">
               <div className="flex justify-between text-gray-400 text-sm">
-                <span>Delivery Charge</span>
+                <span>Platform Fee</span>
                 <div className="flex items-center text-white">
                   <FaRupeeSign size={12} />
                   <span>{deliveryCharge}</span>
@@ -323,7 +325,7 @@ export default function Checkout() {
               <p>Payment Method</p>
             </div>
             <div className="grid grid-cols-2 gap-3">
-              <motion.button 
+              {/* <motion.button 
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setPaymentMethod("cod")} 
                 disabled={codDisabled} 
@@ -335,12 +337,12 @@ export default function Checkout() {
                 <span className="text-lg text-white font-semibold tracking-wide">
                  Cash On Delivery
                 </span>
-              </motion.button>
+              </motion.button> */}
 
               <motion.button 
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setPaymentMethod("stripe")}
-                className={`flex flex-col items-center justify-center p-3 rounded-xl border-2 transition-all ${
+                className={`flex flex-col items-center justify-center p-3 w-full rounded-xl border-2 transition-all ${
                   paymentMethod === "stripe" ? "border-purple-500 bg-purple-500/20" : "border-white/5 bg-white/5"
                 }`}
               >

@@ -9,8 +9,8 @@ import { IProduct } from "@/model/product.model";
 import { ClipLoader } from "react-spinners";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageSquare, Calendar } from "lucide-react";
-
-import { FaChevronLeft, FaChevronRight, FaStore,FaBriefcase } from "react-icons/fa";
+import { FaBookOpen } from "react-icons/fa6";
+import { FaChevronLeft, FaChevronRight, FaStore, FaBriefcase, FaMapMarkerAlt } from "react-icons/fa";
 import UseGetAllProducts from "../../../hooks/UseGetAllProductsData";
 import {
   HiShoppingCart,
@@ -260,10 +260,10 @@ function ViewProduct() {
                 {product?.title || "Unknown title"}
 
               </h1>
-              {/* <p className="text-gray-400 mb-2 flex items-center gap-2 font-extrabold">
-                <FaTag className="text-purple-400 animate-pulse   shadow-[0_0_15px_rgba(34,197,94,0.8)]" />
-                {product?.category}
-              </p> */}
+              <p className="text-gray-400 mb-2 flex items-center gap-2 font-extrabold">
+                <FaBookOpen className="text-purple-400 animate-pulse   shadow-[0_0_15px_rgba(34,197,94,0.8)]" />
+                Expert: {product?.category}
+              </p>
 
               <p className="text-green-500 text-2xl font-extrabold flex items-center gap-2 mt-2 mb-2">
                 <FaCreditCard className="text-green-400 animate-pulse shadow-[0_0_15px_rgba(251,191,36,0.8)]" />
@@ -302,21 +302,24 @@ function ViewProduct() {
                 </div>
               )} */}
 
-              <div className="flex items-center  gap-2 text-sm text-gray-400 border-t border-white/5 pt-2">
+              <div className="flex items-center gap-2 text-sm text-gray-400 border-t border-white/5 pt-2">
                 <FaBriefcase
                   size={18}
                   className="text-blue-600 animate-pulse shadow-[0_0_15px_rgba(168,85,247,0.5)]"
                 />
                 <span className="text-[17px] text-bold text-gray-300 truncate">
-                                  Expresence yr:{product.vendor?.gstNumber || "Unknown Vendor"}
-
+                  Experience yr: {product.vendor?.gstNumber || "Unknown Vendor"}
                 </span>
-                 
               </div>
-                <span className="text-[17px] text-bold text-gray-300 truncate">
-                                 {product.vendor?.shopAddress || "shop no "}
-
+              <div className="flex items-center gap-2 text-sm text-gray-400">
+                <FaMapMarkerAlt
+                  size={18}
+                  className="text-red-500 animate-pulse shadow-[0_0_15px_rgba(239,68,68,0.5)]"
+                />
+                <span className="text-[17px] text-bold text-gray-300 mt-2 truncate">
+                  {product.vendor?.shopAddress || "shop no "}
                 </span>
+              </div>
               {/* {product?.payOnDelivery === true && (
                 <div className="flex items-center gap-2 mb-2 mt-2 text-gray-300">
                   <FaMoneyBillWave className="text-purple-400 animate-pulse shadow-[0_0_15px_rgba(168,85,247,0.5)]" />
