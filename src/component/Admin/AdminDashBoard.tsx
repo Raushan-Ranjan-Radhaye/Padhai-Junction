@@ -40,7 +40,7 @@ function AdminDashBoard() {
     },
     {
       id: "product-approval",
-      label: "Product Approval",
+      label: "Card Approval",
       icon: <FaBox size={22} />,
     },
   ];

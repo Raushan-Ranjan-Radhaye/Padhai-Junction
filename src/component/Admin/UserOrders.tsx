@@ -107,7 +107,7 @@ function UserOrders() {
           My Orders
         </h1>
         <p className="text-gray-400 mt-1 text-xs sm:text-sm md:text-base">
-          Manage and track your vendor orders
+          Manage  your teacher orders
         </p>
       </div>
 
@@ -137,7 +137,7 @@ function UserOrders() {
             </div>
           </div>
         </div>
-        <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl p-2 sm:p-3 lg:p-4">
+        {/* <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl p-2 sm:p-3 lg:p-4">
           <div className="flex items-center gap-2 sm:gap-3">
             <div className="p-1.5 sm:p-2 bg-purple-500/20 rounded-lg">
               <MdLocalShipping className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-purple-400" />
@@ -149,8 +149,8 @@ function UserOrders() {
               <p className="text-[10px] sm:text-xs text-gray-400">Shipped</p>
             </div>
           </div>
-        </div>
-        <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl p-2 sm:p-3 lg:p-4">
+        </div> */}
+        {/* <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl p-2 sm:p-3 lg:p-4">
           <div className="flex items-center gap-2 sm:gap-3">
             <div className="p-1.5 sm:p-2 bg-green-500/20 rounded-lg">
               <FaCheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-green-400" />
@@ -162,7 +162,7 @@ function UserOrders() {
               <p className="text-[10px] sm:text-xs text-gray-400">Delivered</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Desktop Table View - with horizontal scroll */}
@@ -203,7 +203,7 @@ function UserOrders() {
                 </th>
                 <th className="p-3 lg:p-4 text-center">
                   <span className="flex items-center justify-center gap-1.5 lg:gap-2 text-xs lg:text-sm font-semibold text-gray-300 uppercase tracking-wider">
-                    <FaEdit className="text-xs text-pink-400" /> Vendor
+                    <FaEdit className="text-xs text-pink-400" /> Teacher
                   </span>
                 </th>
               </tr>

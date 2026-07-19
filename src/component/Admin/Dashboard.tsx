@@ -146,28 +146,28 @@ function Dashboard() {
         {/* Stats Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-3">
           <Statbox
-            title="Total Vendors"
+            title="Total Teachers"
             value={vendors.length}
             icon={<LuUsers className="h-4 w-4 sm:h-6 sm:w-6" />}
             iconColor="text-blue-400"
             iconBg="bg-blue-400/10"
           />
           <Statbox
-            title="Pending Vendors"
+            title="Pending Teachers"
             value={pendingVendors.length}
             icon={<LuClock className="h-4 w-4 sm:h-6 sm:w-6" />}
             iconColor="text-yellow-400"
             iconBg="bg-yellow-400/10"
           />
           <Statbox
-            title="Total Products"
+            title="Total Cards"
             value={products.length}
             icon={<LuPackage2 className="h-4 w-4 sm:h-6 sm:w-6" />}
             iconColor="text-purple-400"
             iconBg="bg-purple-400/10"
           />
           <Statbox
-            title="Pending Products"
+            title="Pending Cards"
             value={pendingProducts.length}
             icon={<LuCircleAlert className="h-4 w-4 sm:h-6 sm:w-6" />}
             iconColor="text-orange-400"
@@ -248,7 +248,7 @@ function Dashboard() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1.5 sm:gap-2">
                       <LuPackage2 className="h-3 w-3 sm:h-4 sm:w-4 text-purple-400 flex-shrink-0" />
-                      <span>Products:</span>
+                      <span>Cards:</span>
                     </div>
                     <span className="font-medium text-white">{vendorsProducts.length}</span>
                   </div>
@@ -261,29 +261,29 @@ function Dashboard() {
                     <span className="font-medium text-white">{vendorOrders.length}</span>
                   </div>
                   {/* Delivered */}
-                  <div className="flex items-center justify-between">
+                  {/* <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1.5 sm:gap-2">
                       <LuCircleCheck className="h-3 w-3 sm:h-4 sm:w-4 text-green-400 flex-shrink-0" />
                       <span>Delivered:</span>
                     </div>
                     <span className="font-medium text-green-400">{delivered}</span>
-                  </div>
+                  </div> */}
                   {/* Cancelled */}
-                  <div className="flex items-center justify-between">
+                  {/* <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1.5 sm:gap-2">
                       <LuCircleX className="h-3 w-3 sm:h-4 sm:w-4 text-red-400 flex-shrink-0" />
                       <span>Cancelled:</span>
                     </div>
                     <span className="font-medium text-red-400">{cancelled}</span>
-                  </div>
+                  </div> */}
                   {/* Returned */}
-                  <div className="flex items-center justify-between">
+                  {/* <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1.5 sm:gap-2">
                       <LuRotateCcw className="h-3 w-3 sm:h-4 sm:w-4 text-orange-400 flex-shrink-0" />
                       <span>Returned:</span>
                     </div>
                     <span className="font-medium text-orange-400">{returned}</span>
-                  </div>
+                  </div> */}
                   {/* Earnings */}
                   <div className="border-t border-white/10 my-1.5 sm:my-2 pt-1.5 sm:pt-2 flex items-center justify-between">
                     <div className="flex items-center gap-1.5 sm:gap-2">
@@ -305,7 +305,7 @@ function Dashboard() {
           {/* BarGraph */}
           <div className="bg-white/5 border border-white/10 rounded-xl p-3 sm:p-4 h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] hover:bg-white/10">
             <h2 className="font-semibold mb-2 text-xs sm:text-sm text-white">
-              Vendor-wise Orders
+              Teacher-wise Orders
             </h2>
             <ResponsiveContainer width="100%" height="85%">
               <BarChart 
@@ -336,10 +336,10 @@ function Dashboard() {
             <h2 className="font-semibold mb-2 text-xs sm:text-sm text-white">Order Status Distribution</h2>
             {/* Status Boxes - Responsive Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-2 lg:grid-cols-4 gap-2 mb-3 sm:mb-4">
-              <StatusBox label="Delivered" value={deliveredOrders.length} icon={<LuCircleCheck className="h-4 w-4 sm:h-5 sm:w-5" />} colorClass="text-green-400" />
+              {/* <StatusBox label="Delivered" value={deliveredOrders.length} icon={<LuCircleCheck className="h-4 w-4 sm:h-5 sm:w-5" />} colorClass="text-green-400" /> */}
               <StatusBox label="Pending" value={remainingOrders.length} icon={<LuClock className="h-4 w-4 sm:h-5 sm:w-5" />} colorClass="text-yellow-400" />
-              <StatusBox label="Cancelled" value={cancelledOrders.length} icon={<LuCircleX className="h-4 w-4 sm:h-5 sm:w-5" />} colorClass="text-red-400" />
-              <StatusBox label="Returned" value={returnedOrders.length} icon={<LuRotateCcw className="h-4 w-4 sm:h-5 sm:w-5" />} colorClass="text-orange-400" />
+              {/* <StatusBox label="Cancelled" value={cancelledOrders.length} icon={<LuCircleX className="h-4 w-4 sm:h-5 sm:w-5" />} colorClass="text-red-400" /> */}
+              {/* <StatusBox label="Returned" value={returnedOrders.length} icon={<LuRotateCcw className="h-4 w-4 sm:h-5 sm:w-5" />} colorClass="text-orange-400" /> */}
             </div>
             {/* Pie Chart */}
             <div className="h-[180px] sm:h-[200px] md:h-[220px] lg:h-[260px]">

@@ -93,10 +93,10 @@ function VendorApprovel() {
           <thead className="bg-gradient-to-r from-white/10 to-white/5 sticky top-0 z-10">
             <tr className="border-b border-white/20">
               <th className="p-4 text-sm font-semibold text-gray-300 uppercase tracking-wider">
-                Vendor Name
+                Teacher Name
               </th>
               <th className="p-4 text-sm font-semibold text-gray-300 uppercase tracking-wider">
-                Shop Name
+                Qulification
               </th>
               <th className="p-4 text-sm font-semibold text-gray-300 uppercase tracking-wider">
                 Phone
@@ -134,10 +134,10 @@ function VendorApprovel() {
                       </svg>
                     </div>
                     <p className="text-lg font-medium">
-                      No Vendor Requests Found
+                      No Teacher Requests Found
                     </p>
                     <p className="text-sm text-gray-500 mt-1">
-                      Check back later for new vendor applications
+                      Check back later for new Teacher applications
                     </p>
                   </div>
                 </td>
@@ -388,7 +388,7 @@ function VendorApprovel() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-white/20 rounded-lg p-3">
                     <span className="text-xs text-gray-400 uppercase tracking-wide">
-                      Shop Name
+                      Qualification 
                     </span>
                     <p className="mt-1 font-semibold text-white">
                       {selectedVendor.shopName || "-"}
@@ -396,7 +396,7 @@ function VendorApprovel() {
                   </div>
                   <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-white/20 rounded-lg p-3">
                     <span className="text-xs text-gray-400 uppercase tracking-wide">
-                      GSTIN
+                      Experience
                     </span>
                     <p className="mt-1 font-semibold text-white">
                       {selectedVendor.gstNumber || "-"}
@@ -406,7 +406,7 @@ function VendorApprovel() {
 
                 <div className="bg-gradient-to-r from-gray-700/50 to-gray-600/50 border border-white/20 rounded-lg p-3">
                   <span className="text-xs text-gray-400 uppercase tracking-wide">
-                    Shop Address
+                     Address
                   </span>
                   <p className="mt-1 font-semibold text-white">
                     {selectedVendor.shopAddress || "-"}
@@ -536,7 +536,7 @@ function VendorApprovel() {
               <div className="space-y-4">
                 <textarea
                   rows={4}
-                  placeholder="Please enter the reason for rejecting this vendor..."
+                  placeholder="Please enter the reason for rejecting this Teacher..."
                   onChange={(e) => setRejectedReason(e.target.value)}
                   value={rejectedReason}
                   className="w-full bg-white/10 border border-white/20 rounded-lg p-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent resize-none"

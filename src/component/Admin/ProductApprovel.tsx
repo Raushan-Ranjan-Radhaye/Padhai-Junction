@@ -87,7 +87,7 @@ function ProductApprovel() {
   return (
     <div className="w-full px-3 sm:px-6 lg:px-10 text-white">
       <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6">
-        Product Approval Requests
+        Card Approval Requests
       </h1>
       {/* desktop table */}
       <div className="hidden md:block overflow-x-auto bg-gradient-to-br from-white/5 to-white/3 rounded-xl border border-white/20 shadow-lg">
@@ -98,7 +98,7 @@ function ProductApprovel() {
                 Image
               </th>
               <th className="p-4 text-sm font-semibold text-gray-300 uppercase tracking-wider">
-                Product Name
+                Card Name
               </th>
               <th className="p-4 text-sm font-semibold text-gray-300 uppercase tracking-wider">
                 Price
@@ -107,7 +107,7 @@ function ProductApprovel() {
                 Category
               </th>
               <th className="p-4 text-sm font-semibold text-gray-300 uppercase tracking-wider">
-                Vendor
+                Teacher
               </th>
               <th className="p-4 text-sm font-semibold text-gray-300 uppercase tracking-wider">
                 Status
@@ -142,10 +142,10 @@ function ProductApprovel() {
                       </svg>
                     </div>
                     <p className="text-lg font-medium">
-                      No Product Requests Found
+                      No Card Requests Found
                     </p>
                     <p className="text-sm text-gray-500 mt-1">
-                      Check back later for new product submissions
+                      Check back later for new card submissions
                     </p>
                   </div>
                 </td>
@@ -261,7 +261,7 @@ function ProductApprovel() {
               </div>
               <p className="text-lg font-medium">No Product Requests Found</p>
               <p className="text-sm text-gray-500 mt-1">
-                Check back later for new product submissions
+                Check back later for new card submissions
               </p>
             </div>
           </div>
@@ -304,7 +304,7 @@ function ProductApprovel() {
                   </span>
                 </div>
                 <div className="flex justify-between items-center bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-white/20 rounded-lg p-2">
-                  <span className="text-gray-300 font-medium">Vendor:</span>
+                  <span className="text-gray-300 font-medium">Teacher Name:</span>
                   <span className="text-white">
                     {typeof product?.vendor === "object"
                       ? product.vendor.name
@@ -312,7 +312,7 @@ function ProductApprovel() {
                   </span>
                 </div>
                 <div className="flex justify-between items-center bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-white/20 rounded-lg p-2">
-                  <span className="text-gray-300 font-medium">Stock:</span>
+                  <span className="text-gray-300 font-medium">No of children are teach:</span>
                   <span className="text-white">{product.stock}</span>
                 </div>
               </div>
@@ -370,7 +370,7 @@ function ProductApprovel() {
             >
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl sm:text-2xl font-bold text-white">
-                  Product Details
+                  Card Details
                 </h3>
                 <button
                   onClick={() => setSelectedProduct(null)}
@@ -463,7 +463,7 @@ function ProductApprovel() {
                   </div>
                   <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-white/20 rounded-lg p-3">
                     <span className="text-xs text-gray-400 uppercase tracking-wide">
-                      Stock
+                      No of children are teach
                     </span>
                     <p className="mt-1 font-semibold text-white">
                       {selectedProduct.stock}
@@ -474,7 +474,7 @@ function ProductApprovel() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-white/20 rounded-lg p-3">
                     <span className="text-xs text-gray-400 uppercase tracking-wide">
-                      Vendor
+                      Teacher Name
                     </span>
                     <p className="mt-1 font-semibold text-white">
                       {typeof selectedProduct?.vendor === "object"
@@ -482,14 +482,14 @@ function ProductApprovel() {
                         : "Unknown Vendor"}
                     </p>
                   </div>
-                  <div className="bg-gradient-to-r from-green-500/10 to-teal-500/10 border border-white/20 rounded-lg p-3">
+                  {/* <div className="bg-gradient-to-r from-green-500/10 to-teal-500/10 border border-white/20 rounded-lg p-3">
                     <span className="text-xs text-gray-400 uppercase tracking-wide">
                       Is Wearable
                     </span>
                     <p className="mt-1 font-semibold text-white">
                       {selectedProduct.isWearable ? "Yes" : "No"}
                     </p>
-                  </div>
+                  </div> */}
                 </div>
 
                 {selectedProduct.isWearable && selectedProduct.sizes && (

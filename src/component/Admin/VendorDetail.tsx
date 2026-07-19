@@ -62,7 +62,7 @@ function VendorDetail() {
   return (
     <div className="w-full px-3 sm:px-6 lg:px-10 text-white">
       <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6">
-        Approved Vendors
+        Approved Teachers
       </h1>
       
       {/* desktop table */}
@@ -71,10 +71,10 @@ function VendorDetail() {
           <thead className="bg-gradient-to-r from-white/10 to-white/5 sticky top-0 z-10">
             <tr className="border-b border-white/20">
               <th className="p-4 text-sm font-semibold text-gray-300 uppercase tracking-wider">
-                Vendor Name
+                Teacher Name
               </th>
               <th className="p-4 text-sm font-semibold text-gray-300 uppercase tracking-wider">
-                Shop Name
+                Qulifiaction
               </th>
               <th className="p-4 text-sm font-semibold text-gray-300 uppercase tracking-wider">
                 Phone
@@ -86,7 +86,7 @@ function VendorDetail() {
                 Details
               </th>
               <th className="p-4 text-sm font-semibold text-gray-300 uppercase tracking-wider text-center">
-                Products Details
+                Card Details
               </th>
             </tr>
           </thead>
@@ -220,7 +220,7 @@ function VendorDetail() {
                             d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                           />
                         </svg>
-                        <span>Vendor Products</span>
+                        <span>Vendor Card</span>
                       </span>
                     </button>
                   </td>
@@ -657,28 +657,28 @@ function VendorDetail() {
                         </div>
 
                         {/* Additional Info Grid */}
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                        {/* <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                           {currentProduct?.freeDelivery && (
                             <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-white/10 rounded-lg p-2 text-center">
                               <span className="text-[10px] sm:text-xs text-gray-400">Free Delivery</span>
                             </div>
                           )}
-                          {currentProduct?.replacementDays && currentProduct.replacementDays > 0 && (
+                           {currentProduct?.replacementDays && currentProduct.replacementDays > 0 && (
                             <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-white/10 rounded-lg p-2 text-center">
                               <span className="text-[10px] sm:text-xs text-gray-400">{currentProduct.replacementDays} Days Replacement</span>
                             </div>
-                          )}
-                          {currentProduct?.warrenty && currentProduct.warrenty > 0 && (
+                          )} 
+                           {currentProduct?.warrenty && currentProduct.warrenty > 0 && (
                             <div className="bg-gradient-to-r from-orange-500/10 to-yellow-500/10 border border-white/10 rounded-lg p-2 text-center">
                               <span className="text-[10px] sm:text-xs text-gray-400">{currentProduct.warrenty} Months Warranty</span>
                             </div>
-                          )}
-                          {currentProduct?.payOnDelivery && (
+                          )} 
+                           {currentProduct?.payOnDelivery && (
                             <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-white/10 rounded-lg p-2 text-center">
                               <span className="text-[10px] sm:text-xs text-gray-400">COD Available</span>
                             </div>
-                          )}
-                        </div>
+                          )} 
+                        </div> */}
 
                         {/* Details Points */}
                         {currentProduct?.detailsPoints && currentProduct.detailsPoints.length > 0 && (
@@ -697,8 +697,8 @@ function VendorDetail() {
 
                         {/* Stock Info */}
                         <div className="flex justify-between items-center text-xs sm:text-sm text-gray-400 pt-2 border-t border-white/10">
-                          <span>Stock: <span className={currentProduct?.stock && currentProduct.stock > 0 ? "text-green-400" : "text-red-400"}>{currentProduct?.stock || 0}</span></span>
-                          <span>Product {currentProductIndex + 1} of {vendorProducts.length}</span>
+                          <span>No of children are teach: <span className={currentProduct?.stock && currentProduct.stock > 0 ? "text-green-400" : "text-red-400"}>{currentProduct?.stock || 0}</span></span>
+                          <span>Card {currentProductIndex + 1} of {vendorProducts.length}</span>
                         </div>
                       </div>
                     </div>
